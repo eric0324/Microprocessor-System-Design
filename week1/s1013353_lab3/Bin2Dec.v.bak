@@ -1,0 +1,9 @@
+module Bin2Dec(Sw, Seg7)
+	input [9:0] Sw;
+	output [31:0] Seg7;
+	reg [31:0] Seg7;
+	
+	always@
+	
+
+endmodule

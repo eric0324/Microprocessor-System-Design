@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "system.h"
+#include "io.h"
+#include "alt_types.h"
+int SW_get();
+int Btn_get();
 
 void startBoard(int board[][5])
 {
@@ -57,14 +62,26 @@ void startShips(int ships[][2]){
 
 void giveShot(int shot[2])
 {
-
-        printf("Line: ");
-        scanf("%d",&shot[0]);
+		int sum =0;
+		 printf("Column?\n");
+		 usleep(5000000);
+        do{
+        	shot[0] = SW_change(SW_get());
+        }while(shot[0]>20);
         shot[0]--;
 
-        printf("Column: ");
-        scanf("%d",&shot[1]);
+        printf("Yes, sir\n");
+
+        usleep(500000);
+
+        printf("Column?\n");
+        do{
+        	shot[1] = SW_change(SW_get());
+        }while(shot[1]>20);
         shot[1]--;
+        printf("Yes, sir\n");
+
+        usleep(500000);
 
 }
 
@@ -125,7 +142,11 @@ int main() {
   printf("(2) Difficult\n");
   printf("(3) Ordinary\n");
   printf("(4) Easy\n");
-  scanf("%d",&difficulty);
+
+  do{
+	  difficulty = SW_change(SW_get());
+
+  }while(difficulty>20);
 
   startBoard(board);
   startShips(ships);
@@ -160,4 +181,37 @@ int main() {
   }else{
     printf("\n\n\nFinished game. You lost");
   }
+}
+
+
+
+
+int SW_get(){
+	return IORD(PIO_SW_BASE, 0) & 0x000003ff;
+}
+
+
+int Btn_get(){
+	return IORD(PIO_BTN0_BASE, 0);
+}
+
+int SW_change(int original){
+	if(original == 1)
+		return 1;
+	else if(original == 2)
+		return 2;
+	else if(original == 4)
+		return 3;
+	else if(original == 8)
+		return 4;
+	else if(original == 16)
+		return 5;
+	else if(original == 32)
+		return 6;
+	else if(original == 64)
+		return 7;
+	else if(original == 128)
+		return 8;
+	else
+		return 50;
 }

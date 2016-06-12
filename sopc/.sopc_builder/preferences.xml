@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="Default">
+  <columns>
+   <opcodeName visible="0" />
+   <connections preferredWidth="175" />
+   <irq preferredWidth="34" />
+   <export visible="0" />
+   <name preferredWidth="309" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="294" />
+   <clocksource preferredWidth="293" />
+   <frequency preferredWidth="282" />
+  </columns>
+ </clocktable>
+ <window width="1365" height="728" x="1" y="0" />
+ <library
+   expandedCategories="Library/Interface Protocols,Library/Bridges and Adapters/Memory Mapped,Library,Project,Library/Interface Protocols/Serial,Library/Bridges and Adapters" />
+</preferences>

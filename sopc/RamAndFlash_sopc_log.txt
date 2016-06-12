@@ -1,0 +1,114 @@
+Altera SOPC Builder Version 10.10 Build 153
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2016.06.12 18:56:44 (*) mk_custom_sdk starting
+# 2016.06.12 18:56:44 (*) Reading project I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc.ptf.
+
+# 2016.06.12 18:56:45 (*) Finding all CPUs
+# 2016.06.12 18:56:45 (*) Finding all available components
+# 2016.06.12 18:56:45 (*) Reading I:/cpu/s1013353_hw14/sopc/.sopc_builder/install.ptf
+
+# 2016.06.12 18:56:45 (*) Found 63 components
+
+# 2016.06.12 18:56:46 (*) Finding all peripherals
+
+# 2016.06.12 18:56:46 (*) Finding software components
+
+# 2016.06.12 18:56:47 (*) (Legacy SDK Generation Skipped)
+# 2016.06.12 18:56:47 (*) (All TCL Script Generation Skipped)
+# 2016.06.12 18:56:47 (*) (No Libraries Built)
+# 2016.06.12 18:56:47 (*) (Contents Generation Skipped)
+# 2016.06.12 18:56:47 (*) mk_custom_sdk finishing
+
+# 2016.06.12 18:56:47 (*) Starting generation for system: RamAndFlash_sopc.
+
+.
+.
+.
+.
+.
+.
+.
+..
+..
+..
+.
+
+# 2016.06.12 18:56:49 (*) Running Generator Program for cpu
+
+# 2016.06.12 18:56:52 (*) Starting Nios II generation
+# 2016.06.12 18:56:52 (*)   Checking for plaintext license.
+# 2016.06.12 18:57:34 (*)   Plaintext license not found.
+# 2016.06.12 18:57:34 (*)   Checking for encrypted license (non-evaluation).
+# 2016.06.12 18:58:11 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2016.06.12 18:58:11 (*)   Getting CPU configuration settings
+# 2016.06.12 18:58:11 (*)   Elaborating CPU configuration settings
+# 2016.06.12 18:58:12 (*)   Creating all objects for CPU
+
+# 2016.06.12 18:58:12 (*)     Testbench
+# 2016.06.12 18:58:12 (*)     Instruction decoding
+# 2016.06.12 18:58:12 (*)       Instruction fields
+# 2016.06.12 18:58:12 (*)       Instruction decodes
+# 2016.06.12 18:58:13 (*)       Signals for RTL simulation waveforms
+# 2016.06.12 18:58:13 (*)       Instruction controls
+# 2016.06.12 18:58:13 (*)     Pipeline frontend
+# 2016.06.12 18:58:14 (*)     Pipeline backend
+# 2016.06.12 18:58:19 (*)   Generating HDL from CPU objects
+# 2016.06.12 18:58:23 (*)   Creating encrypted HDL
+
+# 2016.06.12 18:58:25 (*) Done Nios II generation
+
+# 2016.06.12 18:58:26 (*) Running Generator Program for onchip_memory
+
+# 2016.06.12 18:58:27 (*) Running Generator Program for jtag_uart
+
+# 2016.06.12 18:58:29 (*) Running Generator Program for sysid
+
+# 2016.06.12 18:58:31 (*) Running Generator Program for sdram
+
+# 2016.06.12 18:58:33 (*) Running Generator Program for cfi_flash
+
+# 2016.06.12 18:58:34 (*) Running Generator Program for timer
+
+# 2016.06.12 18:58:35 (*) Running Generator Program for pio_led
+
+# 2016.06.12 18:58:37 (*) Running Generator Program for pio_seg7
+
+# 2016.06.12 18:58:38 (*) Running Generator Program for pio_btn0
+
+# 2016.06.12 18:58:40 (*) Running Generator Program for pio_sw
+
+# 2016.06.12 18:58:41 (*) Running Generator Program for mmc_spi
+
+# 2016.06.12 18:58:43 (*) Running Generator Program for RamAndFlash_sopc_clock_0
+
+# 2016.06.12 18:58:45 (*) Running Generator Program for RamAndFlash_sopc_clock_1
+
+.
+
+
+# 2016.06.12 18:58:47 (*) Running Test Generator Program for sdram
+
+# 2016.06.12 18:58:47 (*) Making arbitration and system (top) modules.
+
+# 2016.06.12 18:59:01 (*) Generating Quartus symbol for top level: RamAndFlash_sopc
+
+# 2016.06.12 18:59:01 (*) Generating Symbol I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc.bsf
+
+# 2016.06.12 18:59:01 (*) Creating command-line system-generation script: I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc_generation_script
+
+# 2016.06.12 18:59:01 (*) Running setup for HDL simulator: modelsim
+
+
+# 2016.06.12 18:59:02 (*) Completed generation for system: RamAndFlash_sopc.
+# 2016.06.12 18:59:02 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc.ptf 
+  System HDL Model : I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc.v 
+  System Generation Script : I:/cpu/s1013353_hw14/sopc/RamAndFlash_sopc_generation_script 
+
+# 2016.06.12 18:59:02 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

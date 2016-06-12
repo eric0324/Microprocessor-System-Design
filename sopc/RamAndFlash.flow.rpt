@@ -1,0 +1,131 @@
+Flow report for RamAndFlash
+Sun Jun 12 19:07:34 2016
+Quartus II 64-Bit Version 10.1 Build 153 11/29/2010 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++------------------------------------+------------------------------------------+
+; Flow Status                        ; Successful - Sun Jun 12 19:07:26 2016    ;
+; Quartus II 64-Bit Version          ; 10.1 Build 153 11/29/2010 SJ Web Edition ;
+; Revision Name                      ; RamAndFlash                              ;
+; Top-level Entity Name              ; RamAndFlash                              ;
+; Family                             ; Cyclone III                              ;
+; Device                             ; EP3C16F484C6                             ;
+; Timing Models                      ; Final                                    ;
+; Total logic elements               ; 5,526 / 15,408 ( 36 % )                  ;
+;     Total combinational functions  ; 4,867 / 15,408 ( 32 % )                  ;
+;     Dedicated logic registers      ; 3,419 / 15,408 ( 22 % )                  ;
+; Total registers                    ; 3559                                     ;
+; Total pins                         ; 158 / 347 ( 46 % )                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 202,752 / 516,096 ( 39 % )               ;
+; Embedded Multiplier 9-bit elements ; 4 / 112 ( 4 % )                          ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                           ;
++------------------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/12/2016 19:04:34 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; RamAndFlash         ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 345052807169.146572947302776                   ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                             ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                              ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/cpu/hw7/RamAndFlash.dpf                     ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/cpu/s1013353_hw7/RamAndFlash.dpf            ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/s1013353_hw9/s1013353_hw9/RamAndFlash.dpf   ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/s1013353_hw10/s1013353_hw10/RamAndFlash.dpf ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/s1013353_hw11/RamAndFlash.dpf               ; --            ; --          ; --         ;
+; MISC_FILE                           ; I:/cpu/s1013353_hw11/RamAndFlash.dpf           ; --            ; --          ; --         ;
+; MISC_FILE                           ; I:/cpu/s1013353_hw14/sopc/RamAndFlash.dpf      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                                       ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                         ; --            ; --          ; Top        ;
+; SOPC_BUILDER_SIGNATURE_ID           ; 00000000000000E0000001554437F50D               ; --            ; --          ; --         ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:21     ; 1.0                     ; 538 MB              ; 00:01:01                           ;
+; Fitter                    ; 00:01:10     ; 1.1                     ; 632 MB              ; 00:00:54                           ;
+; Assembler                 ; 00:00:20     ; 1.0                     ; 376 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:29     ; 1.2                     ; 485 MB              ; 00:00:16                           ;
+; Total                     ; 00:03:20     ; --                      ; --                  ; 00:02:14                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; JH-PC            ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; JH-PC            ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; JH-PC            ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; JH-PC            ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off RamAndFlash -c RamAndFlash
+quartus_fit --read_settings_files=off --write_settings_files=off RamAndFlash -c RamAndFlash
+quartus_asm --read_settings_files=off --write_settings_files=off RamAndFlash -c RamAndFlash
+quartus_sta RamAndFlash -c RamAndFlash
+
+
+

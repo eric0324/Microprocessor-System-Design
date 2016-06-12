@@ -3,9 +3,10 @@
 #include "system.h"
 #include "io.h"
 #include "alt_types.h"
+#include "altera_up_avalon_video_character_buffer_with_dma.h"
 int SW_get();
 int Btn_get();
-
+void init(alt_up_char_buffer_dev *);
 void startBoard(int board[][5])
 {
     int line, column;
@@ -131,58 +132,62 @@ int  pc(int difficulty){
 }
 
 int main() {
-  int difficulty = 0;
-  int board[5][5];
-  int ships[3][2];
-  int shot[2];
-  int attempts = 0, hits = 0, pcHints = 0;
+	alt_up_char_buffer_dev *CHAR_BUFFER;
+	CHAR_BUFFER = alt_up_char_buffer_open_dev("/dev/video_character_buffer_with_dma");
+	init(CHAR_BUFFER);
 
-  printf("Hi, Commander! Choose a difficulty for you:\n");
-  printf("(1) Hell\n");
-  printf("(2) Difficult\n");
-  printf("(3) Ordinary\n");
-  printf("(4) Easy\n");
+	int difficulty = 0;
+	int board[5][5];
+	int ships[3][2];
+	int shot[2];
+	int attempts = 0, hits = 0, pcHints = 0;
 
-  do{
+	alt_up_char_buffer_string(CHAR_BUFFER, "Hi, Commander! Choose a difficulty for you:",24,28);
+	printf("Hi, Commander! Choose a difficulty for you:\n");
+	printf("(1) Hell\n");
+	printf("(2) Difficult\n");
+	printf("(3) Ordinary\n");
+	printf("(4) Easy\n");
+
+	do{
 	  difficulty = SW_change(SW_get());
 
-  }while(difficulty>20);
+	}while(difficulty>20);
 
-  startBoard(board);
-  startShips(ships);
+	startBoard(board);
+	startShips(ships);
 
-  printf("\n");
+	printf("\n");
 
-  do{
-    printf("\n\n\n\n\n\n");
-    showBoard(board);
-    giveShot(shot);
-    attempts++;
+	do{
+	printf("\n\n\n\n\n\n");
+	showBoard(board);
+	giveShot(shot);
+	attempts++;
 
-    if(hitship(shot,ships)){
-        printf("You hit a ship with the shot (%d,%d)\n",shot[0]+1,shot[1]+1);
-        hits++;
-    }
+	if(hitship(shot,ships)){
+		printf("You hit a ship with the shot (%d,%d)\n",shot[0]+1,shot[1]+1);
+		hits++;
+	}
 
-    if(pc(difficulty)){
-      pcHints++;
-      printf("Enemy attack you.");
-    }
+	if(pc(difficulty)){
+	  pcHints++;
+	  printf("Enemy attack you.");
+	}
 
-    changeBoard(shot,ships,board);
+	changeBoard(shot,ships,board);
 
-    if (pcHints == 3)
-      break;
+	if (pcHints == 3)
+	  break;
 
-  }while(hits!=3);
+	}while(hits!=3);
 
-  if (hits==3) {
-    printf("\n\n\nFinished game. You win");
-  }else{
-    printf("\n\n\nFinished game. You lost");
-  }
+	if (hits==3) {
+	printf("\n\n\nFinished game. You win");
+	}else{
+	printf("\n\n\nFinished game. You lost");
+	}
 }
-
 
 
 
@@ -214,4 +219,9 @@ int SW_change(int original){
 		return 8;
 	else
 		return 50;
+}
+
+void init(alt_up_char_buffer_dev * CHAR_BUFFER){
+	alt_up_char_buffer_init(CHAR_BUFFER);
+	alt_up_char_buffer_clear(CHAR_BUFFER);
 }

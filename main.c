@@ -142,12 +142,24 @@ int main() {
 	int shot[2];
 	int attempts = 0, hits = 0, pcHints = 0;
 
-	alt_up_char_buffer_string(CHAR_BUFFER, "Hi, Commander! Choose a difficulty for you:",24,28);
-	printf("Hi, Commander! Choose a difficulty for you:\n");
-	printf("(1) Hell\n");
-	printf("(2) Difficult\n");
-	printf("(3) Ordinary\n");
-	printf("(4) Easy\n");
+	char titleRow1[100]="  ______ ____ _____    __  _  _______ _______ ";
+	char titleRow2[100]=" /  ___// __ \\\\__  \\   \\ \\/ \\/ /\\__  \\\\_  __ \\";
+	char titleRow3[100]=" \\___ \\\\  ___/ / __ \\_  \\     /  / __ \\|  | \\/";
+	char titleRow4[100]="/____  >\\___  >____  /   \\/\\_/  (____  /__|  ";
+	char titleRow5[100]="     \\/     \\/     \\/                \\/       ";
+
+
+	alt_up_char_buffer_string(CHAR_BUFFER,titleRow1 ,16,12);
+	alt_up_char_buffer_string(CHAR_BUFFER,titleRow2 ,16,14);
+	alt_up_char_buffer_string(CHAR_BUFFER,titleRow3 ,16,16);
+	alt_up_char_buffer_string(CHAR_BUFFER,titleRow4 ,16,18);
+	alt_up_char_buffer_string(CHAR_BUFFER,titleRow5 ,16,20);
+
+	alt_up_char_buffer_string(CHAR_BUFFER, "Luffy, Select the waters you want to enter",20,28);
+	alt_up_char_buffer_string(CHAR_BUFFER, "(1) New World - If you get a new world, you can become the One Piece.",5,32);
+	alt_up_char_buffer_string(CHAR_BUFFER, "(2) Grand Line - The world's greatest ocean.",5,34);
+	alt_up_char_buffer_string(CHAR_BUFFER, "(3) Red Line - It is divided into two parts of the world's oceans.",5,36);
+	alt_up_char_buffer_string(CHAR_BUFFER, "(4) East Blue - weakest sea.",5,38);
 
 	do{
 	  difficulty = SW_change(SW_get());

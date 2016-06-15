@@ -450,15 +450,45 @@ int main() {
 
 	}while(difficulty>20);
 
-	if(difficulty == 4){
-
-	}else if(difficulty == 3){
-
+	init(CHAR_BUFFER);
+	if(difficulty == 1){
+		alt_up_char_buffer_string(CHAR_BUFFER, "Brook: Luffy, BIG MOM arrested Sanji",10,28);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Luffy: What!?we are partners!! ! Hurry to save her!!",10,30);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Fran: SUPER!!!!!",10,32);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Hint: Chase BIG MOM's vessels, rescued Sanji",10,40);
+		usleep(900000);
 	}else if(difficulty == 2){
-
+		alt_up_char_buffer_string(CHAR_BUFFER, "Douflamingo: Seize the time to prepare",10,28);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Douflamingo: The world's only true pirates to survive is coming!",10,30);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Douflamingo: Despite the strength of the guy no escape now!",10,32);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Hint: Attack Douflamingo's vessel, Rescue Dressrosa.",10,40);
+		usleep(900000);
+	}else if(difficulty == 3){
+		alt_up_char_buffer_string(CHAR_BUFFER, "Luffy:Vivi, Relying on your a person's life, not enough to bet!",10,28);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Vivi: What do you want me to bet on what means? ...... What ...... I bet called",10,30);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "I do not have any bets can be brought when things ......",14,32);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Luffy: Then put together also bet our lives go on! Because we are partners!",10,34);
+		usleep(900000);
+		alt_up_char_buffer_string(CHAR_BUFFER, "Hint: Assist vivi.Rescue Alabasta",10,40);
+		usleep(900000);
 	}else{
+		alt_up_char_buffer_string(CHAR_BUFFER, "Shanks: Once you become a great pirate, then back to me hat",10,28);
+		usleep(900000);
 
+		alt_up_char_buffer_string(CHAR_BUFFER, "Hint: Break around the ship to prove your strength.",10,40);
+		usleep(900000);
 	}
+
+	usleep(9000000);
 
 
 	startBoard(board);
@@ -833,7 +863,7 @@ int main() {
 		}
 
 
-		usleep(15000000);
+		usleep(10000000);
 
 		init(CHAR_BUFFER);
 		alt_up_char_buffer_string(CHAR_BUFFER,end1 ,10,16);

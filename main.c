@@ -7,6 +7,17 @@
 int SW_get();
 int Btn_get();
 void init(alt_up_char_buffer_dev *);
+void SEG7_set(int index, alt_u32 seg_max);
+
+static unsigned char szMap[]={
+			63, 6, 91, 79, 102, 109, 125, 7,
+			127, 111, 119, 124, 57, 94, 121, 113
+	};
+
+static alt_u32 seg7_mask[]={
+		0xFFFFFF00, 0xFFFF00FF, 0xFF00FFFF, 0x00FFFFFF
+};
+
 void startBoard(int board[][5])
 {
     int line, column;
@@ -75,7 +86,7 @@ void giveShot(int shot[2])
 	CHAR_BUFFER = alt_up_char_buffer_open_dev("/dev/video_character_buffer_with_dma");
 	int sum =0;
 	alt_up_char_buffer_string(CHAR_BUFFER, "Luffy, Tell me x - axis?",10,40);
-	usleep(2500000);
+	usleep(2000000);
 	do{
 		shot[0] = SW_change(SW_get());
 	}while(shot[0]>20);
@@ -84,13 +95,13 @@ void giveShot(int shot[2])
 	alt_up_char_buffer_string(CHAR_BUFFER, "Okay!!!",10,42);
 
 	alt_up_char_buffer_string(CHAR_BUFFER, "Tell me  y - axis?",10,44);
-	usleep(2500000);
+	usleep(2000000);
 	do{
 		shot[1] = SW_change(SW_get());
 	}while(shot[1]>20);
 	shot[1]--;
 	alt_up_char_buffer_string(CHAR_BUFFER, "Attack!!!",10,46);
-	usleep(2500000);
+	usleep(2000000);
 
 }
 
@@ -450,6 +461,11 @@ int main() {
 
 	}while(difficulty>20);
 
+	SEG7_set(3, szMap[0]);
+	SEG7_set(2, szMap[3]);
+	SEG7_set(1, szMap[0]);
+	SEG7_set(0, szMap[3]);
+
 	init(CHAR_BUFFER);
 	if(difficulty == 1){
 		alt_up_char_buffer_string(CHAR_BUFFER, "Brook: Luffy, BIG MOM arrested Sanji",10,28);
@@ -501,6 +517,9 @@ int main() {
 	attempts++;
 
 	if(hitship(shot,ships)){
+
+
+
 		init(CHAR_BUFFER);
 		alt_up_char_buffer_string(CHAR_BUFFER,win1 ,16,8);
 		alt_up_char_buffer_string(CHAR_BUFFER,win2 ,16,10);
@@ -624,6 +643,11 @@ int main() {
 		usleep(9000000);
 		pcHints++;
 	}
+
+	SEG7_set(3, szMap[0]);
+	SEG7_set(2, szMap[3-pcHints]);
+	SEG7_set(1, szMap[0]);
+	SEG7_set(0, szMap[3-hits]);
 
 	changeBoard(shot,ships,board);
 
@@ -863,7 +887,7 @@ int main() {
 		}
 
 
-		usleep(10000000);
+		usleep(9000000);
 
 		init(CHAR_BUFFER);
 		alt_up_char_buffer_string(CHAR_BUFFER,end1 ,10,16);
@@ -902,6 +926,16 @@ int SW_get(){
 
 int Btn_get(){
 	return IORD(PIO_BTN0_BASE, 0);
+}
+
+void SEG7_set(int index, alt_u32 seg_mask){
+	alt_u32 value;
+	value = IORD(PIO_SEG7_BASE, 0);
+	seg_mask^=0xff;
+	seg_mask<<=8*index;
+	value &= seg7_mask[index];
+	value |= seg_mask;
+	IOWR(PIO_SEG7_BASE, 0, value);
 }
 
 int SW_change(int original){

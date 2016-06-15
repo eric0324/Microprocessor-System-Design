@@ -168,12 +168,12 @@ int main() {
 	char win5[100]=" | |_) | (_) | (_) | | | | | |";
 	char win6[100]=" |____/ \\___/ \\___/|_| |_| |_|";
 
-	char lost1[100]="  _    _ ______ _      _____  ";
-	char lost2[100]=" | |  | |  ____| |    |  __ \\ ";
-	char lost3[100]=" | |__| | |__  | |    | |__) |";
-	char lost4[100]=" |  __  |  __| | |    |  ___/ ";
-	char lost5[100]=" | |  | | |____| |____| |     ";
-	char lost6[100]=" |_|  |_|______|______|_|     ";
+	char lost1[100]="  _      ____   _____ _______ ";
+	char lost2[100]=" | |    / __ \\ / ____|__   __|";
+	char lost3[100]=" | |   | |  | | (___    | |   ";
+	char lost4[100]=" | |   | |  | |\\___ \\   | |   ";
+	char lost5[100]=" | |___| |__| |____) |  | |   ";
+	char lost6[100]=" |______\\____/|_____/   |_|   ";
 
 	char end1[100]="            _______ ____           ____  ______      ";
 	char end2[100]="           |__   __/ __ \\         |  _ \\|  ____|   ";
@@ -187,6 +187,18 @@ int main() {
 	char end10[100]=" | |___| |__| | |\\  |  | |   _| |_| |\\  | |__| | |____| |__| |";
 	char end11[100]="  \\_____\\____/|_| \\_|  |_|  |_____|_| \\_|\\____/|______|_____/ ";
 
+	char gameover1[100]="   _____          __  __ ______ ";
+	char gameover2[100]="  / ____|   /\\   |  \\/  |  ____|";
+	char gameover3[100]=" | |  __   /  \\  | \\  / | |__   ";
+	char gameover4[100]=" | | |_ | / /\\ \\ | |\\/| |  __|  ";
+	char gameover5[100]=" | |__| |/ ____ \\| |  | | |____ ";
+	char gameover6[100]="  \\_____/_/    \\_\\_|__|_|______|";
+	char gameover7[100]="  / __ \\ \\    / /  ____|  __ \\  ";
+	char gameover8[100]=" | |  | \\ \\  / /| |__  | |__) | ";
+	char gameover9[100]=" | |  | |\\ \\/ / |  __| |  _  /  ";
+	char gameover10[100]=" | |__| | \\  /  | |____| | \\ \\  ";
+	char gameover11[100]="  \\____/   \\/   |______|_|  \\_\\ ";
+
 	alt_up_char_buffer_string(CHAR_BUFFER,titleRow1 ,14,12);
 	alt_up_char_buffer_string(CHAR_BUFFER,titleRow2 ,14,14);
 	alt_up_char_buffer_string(CHAR_BUFFER,titleRow3 ,14,16);
@@ -194,7 +206,7 @@ int main() {
 	alt_up_char_buffer_string(CHAR_BUFFER,titleRow5 ,14,20);
 	alt_up_char_buffer_string(CHAR_BUFFER,titleRow6 ,14,22);
 
-	alt_up_char_buffer_string(CHAR_BUFFER, "Luffy, Select the locations you want to enter",18,28);
+	alt_up_char_buffer_string(CHAR_BUFFER, "Luffy, Select the location you want to enter",18,28);
 	alt_up_char_buffer_string(CHAR_BUFFER, "(1) New World - If you get a new world, you can become the One Piece.",5,32);
 	alt_up_char_buffer_string(CHAR_BUFFER, "(2) Grand Line - The world's greatest ocean.",5,34);
 	alt_up_char_buffer_string(CHAR_BUFFER, "(3) Red Line - It is divided into two parts of the world's oceans.",5,36);
@@ -360,7 +372,18 @@ int main() {
 		alt_up_char_buffer_string(CHAR_BUFFER,end10,10,34);
 		alt_up_char_buffer_string(CHAR_BUFFER,end11,10,36);
 	}else{
-	printf("\n\n\nFinished game. You lost");
+		init(CHAR_BUFFER);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover1 ,15,16);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover2 ,15,18);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover3 ,15,20);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover4 ,15,22);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover5 ,15,24);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover6 ,15,26);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover7 ,15,28);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover8 ,15,30);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover9 ,15,32);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover10,15,34);
+		alt_up_char_buffer_string(CHAR_BUFFER,gameover11,15,36);
 	}
 }
 
